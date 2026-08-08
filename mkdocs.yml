@@ -1,8 +1,8 @@
 site_name: PeopleCluster
 site_description: Segmentação de colaboradores e trilhas de desenvolvimento (Tema 08 – People Analytics)
-site_url: https://github.com/carloseomartinsdev/PeopleCluster-
-repo_url: https://github.com/carloseomartinsdev/PeopleCluster-
-repo_name: PeopleCluster-
+site_url: https://github.com/carloseomartinsdev/PeopleCluster
+repo_url: https://github.com/carloseomartinsdev/PeopleCluster
+repo_name: PeopleCluster
 
 nav:
   - Descrição do projeto: index.md
