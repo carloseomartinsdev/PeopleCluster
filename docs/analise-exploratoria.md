@@ -1,84 +1,56 @@
 # Análise exploratória
 
-Esta página resume **o desenho** da análise exploratória: quais notebooks existem, o que cada
-um responde e as decisões metodológicas que valem para todos. Os resultados em si ficam nas
-figuras de `reports/figures/` e nas tabelas de `data/processed/`.
+Código: `notebooks/01_exploracao_inicial.ipynb`, `notebooks/02_eda.ipynb`
+Figuras: `reports/figures/`
 
-!!! tip "Como preencher esta página"
-    Preencha depois de [Entendimento dos dados](entendimento-dados.md): a EDA parte dos
-    achados de qualidade registrados lá.
+## Escopo da exploração
 
-    Regras práticas:
+- Estrutura e tipos
+- Qualidade (ausentes, constantes, identificadores)
+- Distribuições de carreira e remuneração
+- Distribuições categóricas e Likert
+- Relação com `Attrition` e `PerformanceRating`
+- Correlações entre variáveis numéricas
 
-    - um notebook por **objetivo de negócio**, não por técnica — assim dá para rastrear cada
-      entrega até o critério de aceite que ela atende;
-    - a página descreve o **desenho**, não os resultados; achado que interessa ao negócio vai
-      para a página do objetivo correspondente;
-    - toda decisão que muda a leitura de um gráfico (percentual × volume, média × mediana,
-      como tratar ausência) fica registrada em **Escolhas metodológicas** — é o que impede a
-      discussão de recomeçar do zero a cada revisão;
-    - se os notebooks são commitados sem saída (`nbstripout`), então **toda figura e tabela
-      relevante precisa ser persistida em disco**, ou o resultado se perde.
+## Resultados
 
-## Mapa dos notebooks
+| Observação | Detalhe |
+|---|---|
+| Taxa de attrition | 16,12% |
+| Horas extras | `OverTime = Yes` associado a maior taxa de saída |
+| Remuneração e idade | Médias inferiores entre quem sai |
+| Satisfação | Níveis baixos nas escalas Likert associados a maior saída |
+| Multicolinearidade | Correlação elevada entre `JobLevel`, `MonthlyIncome` e `TotalWorkingYears` |
+| Colunas não informativas | Três constantes e um identificador |
 
-| Notebook | Objetivo | Recorte | Saída principal |
-|:---|:-:|:---|:---|
-| `NN-objN-nome.ipynb` | &lt;n&gt; | &lt;recorte de dados&gt; | &lt;o que o notebook produz&gt; |
-| `NN-objN-nome.ipynb` | &lt;n&gt; | &lt;recorte de dados&gt; | &lt;o que o notebook produz&gt; |
-| `NN-objN-nome.ipynb` | &lt;n&gt; | &lt;recorte de dados&gt; | &lt;o que o notebook produz&gt; |
+## Visualizações
 
-A coluna **Objetivo** referencia a numeração dos [critérios de sucesso](criterios-sucesso.md).
+### Carreira e remuneração
 
-## Desenho da EDA
+![Histogramas de variáveis de carreira](assets/figures/01_hist_carreira.png)
 
-<span style="color:red">**Descreva o roteiro do notebook de análise exploratória e sobre
-quais variáveis ele é aplicado.**</span>
+### Escalas Likert
 
-| Seção | Técnica | O que responde |
-|:---|:---|:---|
-| Valores ausentes | &lt;como a ausência é medida&gt; | a ausência é aleatória ou estrutural? |
-| Univariada | &lt;técnica&gt; | como cada variável se distribui? |
-| Outliers | &lt;critério de corte&gt; | há valor implausível? |
-| Bivariada | &lt;medida de associação&gt; | quais variáveis andam juntas? |
-| Multivariada | &lt;técnica de redução ou associação&gt; | que estrutura existe no conjunto? |
-| Temporal | &lt;como a evolução é medida&gt; | o comportamento mudou ao longo do tempo? |
+![Contagens das variáveis Likert](assets/figures/02_likert.png)
 
-![](imagens/eda-steps.png)
+### Attrition
 
-### Escolhas metodológicas
+![Distribuição de Attrition](assets/figures/03_attrition.png)
 
-Cada item declara **a decisão** e **o motivo** — o motivo é o que evita que a decisão seja
-revertida por engano depois.
+### Attrition × renda, idade e tempo de empresa
 
-??? note "Decisões que costumam entrar aqui"
-    - **percentual × volume** ao comparar grupos de tamanhos muito diferentes: valor
-      absoluto mede tamanho, não comportamento;
-    - **como tratar a ausência**: calcular sobre a base com informação e reportar o
-      percentual ausente, em vez de descartar linhas ou tratar a sentinela como categoria;
-    - **associação em vez de contagem cruzada**: a tabela de contingência bruta é dominada
-      pelas categorias grandes;
-    - **média × mediana** quando existe cauda longa legítima;
-    - **amostragem** em cálculos de custo quadrático, quando a leitura comparativa não muda.
+![Boxplots Attrition](assets/figures/04_boxplot_attrition.png)
 
-- <span style="color:red">**Decisão — e por quê.**</span>
-- <span style="color:red">**Decisão — e por quê.**</span>
-- <span style="color:red">**Decisão — e por quê.**</span>
+### Taxa de saída por satisfação
 
-## Reprodução
+![Likert vs Attrition](assets/figures/05_likert_vs_attrition.png)
 
-```bash
-# comando que executa os notebooks na ordem
-uv run invoke notebooks
-```
+### Correlação
 
-<span style="color:red">**Registre se os notebooks são versionados sem saída e onde as
-figuras e tabelas ficam persistidas.**</span>
+![Heatmap de correlação](assets/figures/06_correlacao.png)
 
-## Dados por trás de cada gráfico
+## Implicações para a modelagem
 
-Boa prática: exportar a tabela-fonte de cada figura no mesmo momento em que a figura é
-gravada, de modo que o dado não tenha como divergir do gráfico.
-
-<span style="color:red">**Indique o diretório de exportação, o formato do CSV (separador e
-decimal) e a função responsável por gravar figura e dado juntos.**</span>
+- Distância de Gower é adequada à mistura de tipos
+- Redundância entre nível, renda e experiência sugere PCA ou seleção de atributos
+- Hipóteses de perfil (alta carga, risco de saída, início de carreira, engajados) serão testadas nos clusters

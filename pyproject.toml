@@ -1,8 +1,11 @@
 [project]
 name = "src"
 version = "0.1.0"
-description = "Template de projetos de ciência de dados"
-authors = [{ name = "Aislan Freitas", email = "aislansf@gmail.com" }]
+description = "PeopleCluster — segmentação de colaboradores (Tema 08 RH / People Analytics)"
+authors = [
+    { name = "Carlos E. O. Martins", email = "carlosmartinsdev@outlook.com" },
+    { name = "Ana Caroline Amorim" },
+]
 readme = "README.md"
 requires-python = ">=3.12,<3.13"
 dependencies = [

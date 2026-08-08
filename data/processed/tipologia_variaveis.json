@@ -1,0 +1,39 @@
+{
+  "categoricas_nominais": [
+    "BusinessTravel",
+    "Department",
+    "EducationField",
+    "Gender",
+    "JobRole",
+    "MaritalStatus",
+    "OverTime"
+  ],
+  "likert_clima": [
+    "EnvironmentSatisfaction",
+    "JobSatisfaction",
+    "RelationshipSatisfaction",
+    "JobInvolvement",
+    "WorkLifeBalance"
+  ],
+  "ordinais": [
+    "Education",
+    "JobLevel",
+    "StockOptionLevel"
+  ],
+  "numericas": [
+    "Age",
+    "DailyRate",
+    "DistanceFromHome",
+    "HourlyRate",
+    "MonthlyIncome",
+    "MonthlyRate",
+    "NumCompaniesWorked",
+    "PercentSalaryHike",
+    "TotalWorkingYears",
+    "TrainingTimesLastYear",
+    "YearsAtCompany",
+    "YearsInCurrentRole",
+    "YearsSinceLastPromotion",
+    "YearsWithCurrManager"
+  ]
+}

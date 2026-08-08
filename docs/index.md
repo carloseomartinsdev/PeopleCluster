@@ -1,58 +1,64 @@
-# Nome do projeto
+# PeopleCluster
 
 ## Introdução
 
-<span style="color:red">**Adicione um texto**</span>
+PeopleCluster é um projeto de People Analytics voltado à segmentação de colaboradores e à definição de trilhas de desenvolvimento. A organização opera hoje com uma política única de carreira e retenção; o projeto busca identificar perfis distintos (no máximo cinco) e propor ações diferenciadas por grupo.
+
+A abordagem metodológica é o **CRISP-DM**, com ênfase em aprendizado não supervisionado (clusterização e regras de associação).
 
 ## Dados do projeto
 
-<span style="color:red">**Adicione um texto**</span>
+| Campo | Valor |
+|---|---|
+| Nome | PeopleCluster |
+| Tema | 08 – RH e People Analytics |
+| Entidade de análise | Funcionário (Employee) |
+| Base | IBM HR Analytics Employee Attrition & Performance |
+| Volume | 1.470 registros × 35 variáveis |
+| Licença | ODbL / DbCL 1.0 |
+| Restrição operacional | Máximo de 5 grupos acionáveis |
+| Stack | Python 3.12, `uv`, pandas, scikit-learn, MkDocs |
 
-### Levantamento inicial
+### Tipo do projeto
 
-!!! info "Tipo do projeto"
-    - [ ] Análise exploratória
+!!! info ""
+    - [x] Análise exploratória
     - [ ] Modelo preditivo
     - [ ] Modelo de classificação
-    - [ ] Modelo de agrupamento
+    - [x] Modelo de agrupamento
     - [ ] Detecção de anomalias
 
-### Nível de acesso
+### Confidencialidade
 
-!!! warning "Confidencialidade"
-    - [ ] Público
-    - [ ] Interno (toda a organização)
-    - [ ] Restrito (apenas a área requisitante)
+!!! warning ""
+    - [x] Público
+    - [ ] Interno
+    - [ ] Restrito
 
-### Objetivos de negócio
+### Objetivo de negócio
 
 !!! quote ""
-    <span style="color:red">**Adicione um texto**</span>
+    Identificar perfis distintos de colaboradores e propor trilhas de desenvolvimento específicas para cada grupo, aumentando retenção, satisfação e desempenho organizacional.
 
-## Sobre o projeto
+## Perguntas orientadoras
 
-### Histórico do documento
+1. Quantos grupos existem e por que esse número?
+2. O que caracteriza cada grupo em linguagem de negócio?
+3. Que padrões de coocorrência sustentam ou contradizem a segmentação?
+4. Qual ação diferenciada cada grupo deve receber, e como medir o sucesso?
 
-| Data       | Versão | Descrição                   | Autor         |
-| :--------- | :----- | :-------------------------- | :------------ |
-| 00/00/0000 | 1.0    | Versão inicial do documento | Nome do autor |
+## Histórico do documento
 
-### Dados do solicitante
+| Data | Versão | Descrição | Autor |
+| :--------- | :----- | :-------- | :---- |
+| 07/08/2026 | 1.0 | Estrutura inicial do projeto e Canvas | Carlos E. O. Martins |
+| 08/08/2026 | 1.1 | Documentação das fases de negócio, dados e preparação | Carlos E. O. Martins |
 
-``` mermaid
-flowchart TD
-    id1[Área de negócio] --o id2[Setor requisitante]
-```
+## Equipe
 
-| Nome                      | Cargo / Função | E-mail            |
-| :------------------------ | :------------- | :---------------- |
-| Especialista de negócio 1 | Função 1       | email@exemplo.com |
-| Especialista de negócio 2 | Função 2       | email@exemplo.com |
+- Carlos E. O. Martins ([@carloseomartinsdev](https://github.com/carloseomartinsdev))
+- Ana Caroline Amorim ([@amorinana](https://github.com/amorinana))
 
-### Dados da equipe técnica
+## Solicitante
 
-| Nome               | Cargo / Função        | E-mail            |
-| :----------------- | :-------------------- | :---------------- |
-| Membro da equipe 1 | Analista de Negócios  | email@exemplo.com |
-| Membro da equipe 2 | Engenheiro de Dados   | email@exemplo.com |
-| Membro da equipe 3 | Cientista de Dados    | email@exemplo.com |
+Diretoria Executiva (cenário PBL — memorando do Encontro 1).
