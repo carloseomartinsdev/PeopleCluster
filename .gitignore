@@ -185,3 +185,6 @@ cython_debug/
 
 # ruff
 .ruff_cache/
+
+# Matrizes NumPy regeneráveis (Gower 1470×1470 ~8 MB; o pre-commit limita a 5 MB)
+data/processed/*.npy

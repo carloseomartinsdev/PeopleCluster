@@ -1,0 +1,4 @@
+,kmedoids_gower,hierarquico_gower,kmeans
+kmedoids_gower,1.0,0.0,0.0423
+hierarquico_gower,0.0,1.0,0.0097
+kmeans,0.0423,0.0097,1.0

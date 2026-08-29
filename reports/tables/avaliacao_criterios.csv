@@ -1,0 +1,7 @@
+criterio,valor,status
+k entre 2 e 5,2.0,ok
+menor segmento >= 5%,49.86,ok
+silhueta Gower (referência),0.07475581095982835,fraca_esperada_base_sintetica
+ARI médio bootstrap K-Means,0.67262,ok
+ARI médio bootstrap K-Medoids,0.273225,atencao
+cada grupo com ação RH,2.0,ok

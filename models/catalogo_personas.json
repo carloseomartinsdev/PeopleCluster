@@ -1,0 +1,18 @@
+[
+  {
+    "cluster":0,
+    "n":733,
+    "pct_attrition":11.05,
+    "persona":"Estáveis e engajados",
+    "acoes":"Programas de retenção de longo prazo; Reconhecimento contínuo; Benefícios de permanência",
+    "kpi_monitoramento":"Attrition do segmento; JobSatisfaction; OverTime"
+  },
+  {
+    "cluster":1,
+    "n":737,
+    "pct_attrition":21.17,
+    "persona":"Risco de attrition, Início de carreira",
+    "acoes":"Revisão salarial; Pesquisa de clima; Acompanhamento próximo do gestor; Mentoria; Trilhas de capacitação; Onboarding estruturado",
+    "kpi_monitoramento":"Attrition do segmento; JobSatisfaction; OverTime"
+  }
+]

@@ -1,0 +1,29 @@
+modelo,params,n_clusters,silhueta,davies_bouldin,menor_grupo,maior_grupo
+k-means,"{""init"": ""k-means++"", ""n_clusters"": 2, ""n_init"": 10}",2,0.11111661562156457,3.0652559885113893,336,1134
+k-means,"{""init"": ""random"", ""n_clusters"": 2, ""n_init"": 10}",2,0.10454116945457465,3.1542312161322013,368,1102
+k-means,"{""init"": ""random"", ""n_clusters"": 5, ""n_init"": 10}",5,0.10399017547652513,2.308059828721201,58,770
+mini-batch-k-means,"{""batch_size"": 64, ""n_clusters"": 5, ""n_init"": 10}",5,0.10307379266050579,2.3305382025621837,58,759
+k-means,"{""init"": ""random"", ""n_clusters"": 4, ""n_init"": 10}",4,0.09637078555997317,2.500597461823503,58,768
+k-means,"{""init"": ""k-means++"", ""n_clusters"": 4, ""n_init"": 10}",4,0.09616169714031421,2.5022245501342395,58,764
+mini-batch-k-means,"{""batch_size"": 64, ""n_clusters"": 3, ""n_init"": 10}",3,0.08958461273102312,2.998473311282016,252,792
+mini-batch-k-means,"{""batch_size"": 128, ""n_clusters"": 2, ""n_init"": 10}",2,0.08808909014930208,3.3713197431145083,462,1008
+mini-batch-k-means,"{""batch_size"": 256, ""n_clusters"": 2, ""n_init"": 10}",2,0.08438939025968421,3.5053835749578797,503,967
+bisecting-k-means,"{""bisecting_strategy"": ""biggest_inertia"", ""n_clusters"": 2}",2,0.08369256146080645,3.4327695330979253,508,962
+bisecting-k-means,"{""bisecting_strategy"": ""largest_cluster"", ""n_clusters"": 2}",2,0.08369256146080645,3.4327695330979253,508,962
+mini-batch-k-means,"{""batch_size"": 128, ""n_clusters"": 5, ""n_init"": 10}",5,0.08346342296127682,2.710920552062796,135,663
+k-means,"{""init"": ""random"", ""n_clusters"": 3, ""n_init"": 10}",3,0.08343460141674151,2.8960775389691307,249,820
+k-means,"{""init"": ""k-means++"", ""n_clusters"": 3, ""n_init"": 10}",3,0.08301740287879103,2.896630080446092,250,821
+mini-batch-k-means,"{""batch_size"": 64, ""n_clusters"": 2, ""n_init"": 10}",2,0.07555166185522853,3.592167496693066,660,810
+k-means,"{""init"": ""k-means++"", ""n_clusters"": 5, ""n_init"": 10}",5,0.07141993921119351,2.88250417403665,58,562
+mini-batch-k-means,"{""batch_size"": 256, ""n_clusters"": 4, ""n_init"": 10}",4,0.0670543644623883,3.503657487291721,221,513
+mini-batch-k-means,"{""batch_size"": 256, ""n_clusters"": 5, ""n_init"": 10}",5,0.059550392365627786,3.6143549797081027,176,497
+mini-batch-k-means,"{""batch_size"": 256, ""n_clusters"": 3, ""n_init"": 10}",3,0.05911654900999412,4.026228690642256,314,711
+bisecting-k-means,"{""bisecting_strategy"": ""biggest_inertia"", ""n_clusters"": 4}",4,0.05806020583514339,3.5207931472680736,80,652
+mini-batch-k-means,"{""batch_size"": 128, ""n_clusters"": 4, ""n_init"": 10}",4,0.05301614476354963,3.504666474523577,336,406
+bisecting-k-means,"{""bisecting_strategy"": ""biggest_inertia"", ""n_clusters"": 3}",3,0.051489243036674785,3.8802460672413184,310,652
+bisecting-k-means,"{""bisecting_strategy"": ""largest_cluster"", ""n_clusters"": 3}",3,0.051489243036674785,3.8802460672413184,310,652
+mini-batch-k-means,"{""batch_size"": 64, ""n_clusters"": 4, ""n_init"": 10}",4,0.04842331833822872,3.2878740506206166,286,437
+bisecting-k-means,"{""bisecting_strategy"": ""biggest_inertia"", ""n_clusters"": 5}",5,0.04464772299331328,3.2281015786802847,80,489
+mini-batch-k-means,"{""batch_size"": 128, ""n_clusters"": 3, ""n_init"": 10}",3,0.03524456439147199,4.0552810304180715,338,609
+bisecting-k-means,"{""bisecting_strategy"": ""largest_cluster"", ""n_clusters"": 5}",5,0.0244766337453714,3.545317519968601,177,414
+bisecting-k-means,"{""bisecting_strategy"": ""largest_cluster"", ""n_clusters"": 4}",4,0.018312974656323266,3.782110688619943,238,508

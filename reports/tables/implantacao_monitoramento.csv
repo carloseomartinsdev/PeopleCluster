@@ -1,0 +1,6 @@
+indicador,limiar,responsavel,acao
+Attrition por cluster,cluster 1 > 25% em janela móvel 90 dias,RHBP,revisar pacote de retenção do segmento
+JobSatisfaction média,"queda > 0,3 pontos vs baseline do segmento",Clima organizacional,pesquisa dirigida + PDI
+% OverTime,cluster 1 > 40%,Gestão de pessoas,prevenção de burnout / redistribuição de carga
+% atribuições de confiança baixa,> 20% das novas contratações,People Analytics,revisar medoides / retreinar
+Reciclagem do modelo,a cada 12 meses ou mudança estrutural de headcount,People Analytics,reexecutar notebooks 03–05 e republicar pacote

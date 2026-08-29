@@ -47,6 +47,11 @@ target-version = "py312"
 [tool.ruff.lint]
 select = ["E", "F", "I", "W", "UP"]
 
+# Scripts e notebooks inserem a raiz em sys.path antes de importar `src`.
+[tool.ruff.lint.per-file-ignores]
+"notebooks/*.ipynb" = ["E402"]
+"scripts/*.py" = ["E402"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 

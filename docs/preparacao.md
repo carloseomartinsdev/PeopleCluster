@@ -1,7 +1,7 @@
 # Preparação dos dados
 
-Código: `notebooks/03_preparacao.ipynb`
-Registro de decisões: `references/decisoes_preparacao.md`
+Código: `notebooks/03_preparacao.ipynb`, `notebooks/04_modelagem_clusters.ipynb` (fechamento Gower/scaler)
+Registro: `references/decisoes_preparacao.md`
 
 ## Decisões
 
@@ -9,7 +9,8 @@ Registro de decisões: `references/decisoes_preparacao.md`
 2. Exclusão de `EmployeeNumber` do conjunto de features
 3. Reserva de `Attrition` e `PerformanceRating` para avaliação externa
 4. Classificação das variáveis em nominais, Likert, ordinais e numéricas
-5. Geração de matriz one-hot auxiliar para comparativos com K-Means/GMM
+5. Dissimilaridade de **Gower** sobre features mistas
+6. Matriz one-hot + **StandardScaler** para vias euclidianas (K-Means, DBSCAN, PCA)
 
 ## Pipeline
 
@@ -18,7 +19,8 @@ flowchart LR
   A[raw 1470×35] --> B[hr_limpo 1470×32]
   B --> C[hr_features_cluster 1470×29]
   B --> D[hr_avaliacao]
-  C --> E[hr_kmeans_raw_onehot]
+  C --> E[matriz_gower.npy]
+  C --> F[hr_kmeans_scaled.csv]
 ```
 
 ## Conjuntos gerados
@@ -28,11 +30,6 @@ flowchart LR
 | `data/processed/hr_limpo.csv` | Base sem colunas constantes |
 | `data/processed/hr_features_cluster.csv` | Features de clusterização |
 | `data/processed/hr_avaliacao.csv` | ID e rótulos de avaliação |
-| `data/processed/hr_kmeans_raw_onehot.csv` | One-hot (sem scaler) |
+| `data/processed/matriz_gower.npy` | Dissimilaridade Gower (1470×1470) |
+| `data/processed/hr_kmeans_scaled.csv` | One-hot padronizado |
 | `data/processed/tipologia_variaveis.json` | Tipologia das variáveis |
-
-## Próximos passos da preparação
-
-- Cálculo da dissimilaridade de Gower
-- Padronização das variáveis contínuas na via K-Means/GMM
-- Definição final do conjunto de atributos (incluindo eventual PCA)

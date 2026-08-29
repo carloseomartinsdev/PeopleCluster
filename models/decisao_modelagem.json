@@ -1,0 +1,10 @@
+{
+  "k": 2,
+  "metodo_principal": "kmedoids_gower",
+  "silhueta_gower": 0.07475581095982835,
+  "ligacao_hierarquica": "average",
+  "dbscan_eps": 9.04971758016467,
+  "dbscan_min_amostras": 100,
+  "dbscan_pct_ruido": 0.03469387755102041,
+  "observacao": "Silhueta baixa é compatível com o enunciado do Tema 08 (estrutura de grupos artificialmente fraca na base sintética). A escolha privilegia interpretabilidade de RH."
+}
