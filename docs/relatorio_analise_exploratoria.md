@@ -59,7 +59,7 @@ As três colunas constantes e o identificador `EmployeeNumber` não carregam nen
 | DistanceFromHome (km) | 9,2 | 8,1 | 1 | 7 | 29 |
 | PercentSalaryHike (%) | 15,2 | 3,7 | 11 | 14 | 25 |
 
-![Distribuição das variáveis numéricas de carreira](docs/imagens/01_hist_carreira.png)
+![Distribuição das variáveis numéricas de carreira](assets/figures/01_hist_carreira.png)
 
 *Figura 1 — Distribuição das variáveis numéricas de carreira*
 
