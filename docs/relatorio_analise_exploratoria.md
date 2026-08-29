@@ -59,7 +59,7 @@ As três colunas constantes e o identificador `EmployeeNumber` não carregam nen
 | DistanceFromHome (km) | 9,2 | 8,1 | 1 | 7 | 29 |
 | PercentSalaryHike (%) | 15,2 | 3,7 | 11 | 14 | 25 |
 
-![Distribuição das variáveis numéricas de carreira](imagem/01_hist_carreira.png)
+![Distribuição das variáveis numéricas de carreira](docs/imagens/01_hist_carreira.png)
 
 *Figura 1 — Distribuição das variáveis numéricas de carreira*
 
@@ -85,7 +85,7 @@ A base é fortemente concentrada em Research & Development e em viagens raras; q
 
 ### 5.2 Escalas Likert (satisfação e engajamento, 1=baixo a 4=alto)
 
-![Distribuição das escalas Likert](figures/02_likert.png)
+![Distribuição das escalas Likert](docs/imagens/02_likert.png)
 
 *Figura 2 — Distribuição das escalas Likert de satisfação e engajamento*
 
@@ -95,7 +95,7 @@ As distribuições de `EnvironmentSatisfaction`, `JobSatisfaction` e `Relationsh
 
 ## 6. Variável de Referência — Attrition e Performance (Bloco 5)
 
-![Distribuição de Attrition](figures/03_attrition.png)
+![Distribuição de Attrition](docs/imagens/03_attrition.png)
 
 *Figura 3 — Distribuição da variável Attrition*
 
@@ -119,13 +119,13 @@ As distribuições de `EnvironmentSatisfaction`, `JobSatisfaction` e `Relationsh
 | JobRole = Research Director | 2,5% (o menor de todos os cargos) |
 | Gender = Masculino | 17,0% (vs. 14,8% feminino — diferença pequena) |
 
-![Attrition por OverTime e Departamento](figures/07_attrition_overtime_dept.png)
+![Attrition por OverTime e Departamento](docs/imagens/07_attrition_overtime_dept.png)
 
 *Figura 4 — Taxa de Attrition por OverTime e por Departamento*
 
 ### 7.2 Variáveis numéricas: quem sai é diferente de quem fica?
 
-![Boxplots por Attrition](figures/04_boxplot_attrition.png)
+![Boxplots por Attrition](docs/imagens/04_boxplot_attrition.png)
 
 *Figura 5 — Distribuição de renda, idade e tempo de casa por Attrition*
 
@@ -141,7 +141,7 @@ Colaboradores que saíram têm, em mediana, renda 38% menor, são cerca de 4 ano
 
 ### 7.3 Satisfação e engajamento vs. Attrition
 
-![Likert vs Attrition](figures/05_likert_vs_attrition.png)
+![Likert vs Attrition](docs/imagens/05_likert_vs_attrition.png)
 
 *Figura 6 — Taxa de Attrition por nível de satisfação/engajamento/equilíbrio*
 
@@ -157,7 +157,7 @@ O gradiente é claro nas três escalas: `JobSatisfaction` cai de 22,8% (nível 1
 
 ## 8. Correlações e Multicolinearidade (Bloco 7)
 
-![Mapa de correlação](figures/06_correlacao.png)
+![Mapa de correlação](docs/imagens/06_correlacao.png)
 
 *Figura 7 — Mapa de correlação entre variáveis numéricas selecionadas*
 
