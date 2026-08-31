@@ -18,15 +18,16 @@ Cada registro representa um colaborador, com atributos demográficos, de cargo, 
 ## Observações da fonte
 
 - Colunas constantes: `EmployeeCount`, `StandardHours`, `Over18`
-- Predominância de variáveis mistas (nominais, ordinais e contínuas)
-- Estrutura de agrupamento potencialmente fraca
+- Variáveis numéricas, nominais e Likert na mesma base — daí a distância de Gower
+- Grupos pouco nítidos (a silhueta baixa na modelagem confirma isso)
 
 ## Materiais de referência
 
 | Material | Local |
 |---|---|
 | Dicionário de dados | `references/dicionario_dados.md` |
-| Canvas do problema | `references/canvas_problema.md` e `docs/pbl/canvas-do-problema.md` |
+| Canvas do problema | [canvas_problema.md](canvas_problema.md) |
+| Relatório de EDA | [analise-exploratoria.md](analise-exploratoria.md) |
 | Checklist CRISP-DM (status) | `references/checklist_crisp_dm_status.md` |
 | Roteiro do trabalho | `references/roteiro_trabalho.md` |
 

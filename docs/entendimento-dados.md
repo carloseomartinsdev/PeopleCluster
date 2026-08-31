@@ -35,4 +35,4 @@
 | `Attrition` | Rótulo de avaliação a posteriori |
 | `PerformanceRating` | Rótulo de avaliação a posteriori |
 
-Tipologia serializada: `data/processed/tipologia_variaveis.json`.
+Tipologia em `data/processed/tipologia_variaveis.json`.

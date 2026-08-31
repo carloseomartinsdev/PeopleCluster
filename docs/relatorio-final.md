@@ -1,17 +1,17 @@
 # PeopleCluster — relatório final
 
-**Tema 08 · RH e People Analytics** · CRISP-DM fases 1 a 6 · modelo K-Medoids/Gower, k = 2
+**Tema 08 · RH e People Analytics** · CRISP-DM, fases 1 a 6 · modelo K-Medoids/Gower, k = 2
 
-> Gerado a partir das tabelas e JSON em `reports/` e `models/`. Números não foram redigitados à mão.
+A exploração detalhada está no [relatório de EDA](analise-exploratoria.md); o problema, no [canvas](canvas_problema.md).
 
 ## I · Sumário executivo
 
-A base IBM HR (1.470 colaboradores) se organiza em **dois perfis acionáveis**:
+A base IBM HR (1.470 colaboradores) ficou em **dois grupos**:
 
-- **Cluster 0 — estáveis e engajados:** n = 733, attrition ≈ 11.1%, renda mediana 6347, 8 anos de casa.
-- **Cluster 1 — risco / início de carreira:** n = 737, attrition ≈ 21.2%, renda mediana 3376, 4 anos de casa.
+- **Cluster 0 — estáveis e engajados:** n = 733, attrition ≈ 11,1%, renda mediana 6.347, 8 anos de casa.
+- **Cluster 1 — risco / início de carreira:** n = 737, attrition ≈ 21,2%, renda mediana 3.376, 4 anos de casa.
 
-Silhueta Gower = 0.0748 (fraca, esperada na base sintética). O critério decisivo é o **contraste de attrition** (~11% vs ~21%) e o catálogo de ações por persona. O modelo publicado é K-Medoids sobre Gower; GMM e regras de associação são comparativos.
+Silhueta Gower = 0,075 (fraca, esperada nesta base sintética). O que justificou implantar foi o **contraste de attrition** (~11% vs ~21%) e as ações definidas para cada perfil. O modelo publicado é K-Medoids sobre Gower; GMM e regras de associação entram como comparativo.
 
 ## II · O problema
 
@@ -60,8 +60,8 @@ Auditoria de vazamento: nenhuma das colunas reservadas entra nas features.
 | coluna | esta_nas_features | papel |
 | --- | --- | --- |
 | Attrition | False | rótulo reservado |
-| EmployeeNumber | False | rótulo reservado |
-| PerformanceRating | False | identificador |
+| PerformanceRating | False | rótulo reservado |
+| EmployeeNumber | False | identificador |
 
 Perguntas SMART:
 
@@ -83,17 +83,17 @@ Perguntas SMART:
 
 ## VII · Implantação
 
-Pacote `models/pacote_implantacao.json`: classificação pelo medoide Gower mais próximo, com faixa de confiança. App: `uv run invoke app` (personas, classificar colaborador, monitoramento).
+Pacote `models/pacote_implantacao.json`: o colaborador novo é classificado pelo medoide Gower mais próximo, com faixa de confiança. App: `uv run invoke app` (personas, classificar colaborador, monitoramento).
 
 ## VIII · Limitações
 
 - Base sintética IBM; padrões podem não se repetir em um RH real.
 - Silhueta baixa e ARI entre métodos próximo de zero: as geometrias divergem.
 - Bootstrap do K-Medoids é modesto (~0,27).
-- Dois grupos fundem hipóteses do Canvas (alta carga e baixo engajamento não emergiram sozinhas).
+- Dois grupos fundem hipóteses do Canvas (alta carga e baixo engajamento não apareceram sozinhas).
 
 ## IX · Próximos passos
 
 1. Monitorar attrition e OverTime do cluster 1 mensalmente.
-2. Reciclar o modelo a cada 12 meses ou mudança estrutural de headcount.
+2. Reciclar o modelo a cada 12 meses, ou quando houver mudança relevante de headcount.
 3. Se houver base real, reabrir k e regras de associação com suporte calibrado.

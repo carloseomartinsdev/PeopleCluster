@@ -3,9 +3,9 @@
 Código: `notebooks/04_modelagem_clusters.ipynb`
 Módulos: `src/model/` (Gower, K-Medoids, hierárquica, DBSCAN, GMM)
 
-## Objetivo técnico
+## Objetivo
 
-Obter segmentos interpretáveis de colaboradores (k entre 2 e 5), comparando métodos para dados mistos.
+Obter grupos que o RH consiga nomear (k entre 2 e 5) e comparar métodos, porque o dado é misto.
 
 ## Desenho do experimento
 
@@ -21,7 +21,7 @@ Obter segmentos interpretáveis de colaboradores (k entre 2 e 5), comparando mé
 
 ## Escolha de k
 
-Varredura k = 2…5. Critério principal: silhueta do K-Medoids sobre Gower, sujeita ao teto de 5 grupos e à interpretabilidade de RH.
+Varredura k = 2…5. Critério principal: silhueta do K-Medoids sobre Gower, respeitando o teto de 5 grupos e a possibilidade de ler os perfis em linguagem de RH.
 
 | k | Silhueta Gower (K-Medoids) | Silhueta K-Means |
 |---|---:|---:|
@@ -32,7 +32,7 @@ Varredura k = 2…5. Critério principal: silhueta do K-Medoids sobre Gower, suj
 
 **Decisão:** k = **2** (maior silhueta em Gower).
 
-A silhueta absoluta é baixa, coerente com o enunciado do Tema 08. O critério decisivo é a legibilidade gerencial dos perfis.
+A silhueta absoluta é baixa, o que é coerente com o enunciado do Tema 08. O que decidiu o k = 2 foi a combinação de maior silhueta no Gower e perfis que ainda dão para explicar.
 
 ## Resultado principal (K-Medoids / Gower, k=2)
 
@@ -51,7 +51,7 @@ Varredura em `reports/tables/varredura_gmm.csv`. No k oficial, a covariância de
 ## Outros métodos
 
 - Hierárquica (Gower): ligação `average` com melhor cofenético.
-- DBSCAN: predomina um componente denso — pouco útil para segmentação acionável.
+- DBSCAN: predomina um componente denso — pouco útil para definir trilha de desenvolvimento.
 - PCA-2D: visualização (~18–29% da variância conforme o espaço).
 
 ## Artefatos

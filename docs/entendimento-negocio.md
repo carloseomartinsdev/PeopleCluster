@@ -2,14 +2,14 @@
 
 ## Contexto
 
-A organização aplica a mesma política de carreira e retenção a todos os colaboradores. Perfis distintos — em motivação, carga, satisfação e risco de saída — recebem o mesmo tratamento, o que reduz a efetividade das ações de RH.
+A organização aplica a mesma política de carreira e retenção a todos os colaboradores. Perfis distintos de motivação, carga, satisfação e risco de saída recebem o mesmo tratamento, o que reduz o efeito das ações de RH.
 
 ## Problema
 
 - Rotatividade sem diagnóstico claro por perfil
 - Engajamento desigual entre áreas e cargos
-- Política única de RH pouco aderente à heterogeneidade da força de trabalho
-- Ausência de trilhas de desenvolvimento personalizadas
+- Política única de RH, sem diferenciar os perfis da base
+- Ausência de trilhas de desenvolvimento por grupo
 
 ## Objetivo de negócio
 
@@ -21,9 +21,9 @@ Produzir agrupamentos a partir de atributos demográficos, de carreira, remunera
 
 ## Perguntas orientadas a dados
 
-- Quais perfis de colaboradores emergem dos dados?
-- Existe segmento com maior propensão a attrition?
-- Quais atributos caracterizam alta performance?
+- Quais perfis de colaboradores aparecem nos dados?
+- Existe segmento com maior propensão a sair?
+- Quais atributos caracterizam alta performance nesta base?
 - Como se relacionam satisfação, remuneração e permanência?
 - Horas extras associam-se a maior risco de saída?
 - Quais perfis concentram maior necessidade de investimento em retenção?
@@ -48,4 +48,4 @@ Os perfis acima são hipóteses de negócio a serem confirmadas ou refutadas na 
 - Limite operacional de cinco grupos
 - Risco de superinterpretação de agrupamentos
 
-Canvas completo: `references/canvas_problema.md`.
+Canvas completo: [canvas do problema](canvas_problema.md).

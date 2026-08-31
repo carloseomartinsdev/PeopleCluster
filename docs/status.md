@@ -1,6 +1,6 @@
 # Status do projeto
 
-**Ciclo CRISP-DM concluído.** Decisão: **implantar** a partição K-Medoids/Gower (k = 2).
+As seis fases do CRISP-DM estão fechadas. O modelo adotado na implantação é **K-Medoids com Gower, k = 2**.
 
 | Indicador | Valor |
 |:---|---:|
@@ -8,39 +8,45 @@
 | Notebooks da cadeia | 01–07 |
 | Modelo oficial | K-Medoids / Gower, k=2 |
 | Comparativos | K-Means, hierárquica, DBSCAN, GMM |
-| Associação | Apriori ≡ FP-Growth |
-| Relatório final | `reports/relatorio-final.md` |
+| Associação | Apriori e FP-Growth (mesmos conjuntos frequentes) |
+| Relatório final | [relatorio-final.md](relatorio-final.md) |
 
-???+ success "Fase 0–1: Ambiente e negócio"
-    - [x] Repositório e ambiente `uv` / pre-commit
-    - [x] [Canvas do Problema](pbl/canvas-do-problema.md)
-    - [x] Critérios de sucesso e perguntas orientadas a dados
-    - [x] [Quadro PBL](pbl/quadro-pbl.md) reconstituído (sem fotos do quadro físico)
+## Fase 0–1: Ambiente e negócio
 
-???+ success "Fase 2: Entendimento dos dados"
-    - [x] Base bruta 1.470 × 35
-    - [x] EDA (univariada, bivariada Spearman/Cramér, Tukey, PCA exploratório)
-    - [x] Coleção de insights em `reports/tables/eda_insights.csv`
+- [x] Repositório e ambiente `uv` / pre-commit
+- [x] [Canvas do Problema](canvas_problema.md)
+- [x] Critérios de sucesso e perguntas orientadas a dados
+- [x] [Quadro PBL](pbl/quadro-pbl.md) (reconstituído; não há foto do quadro da sala)
 
-???+ success "Fase 3: Preparação"
-    - [x] Limpeza, tipologia, rótulos reservados
-    - [x] Experimento de escala
-    - [x] Gower (local) e StandardScaler
+## Fase 2: Entendimento dos dados
 
-???+ success "Fase 4: Modelagem"
-    - [x] Varredura k, K-Medoids, hierárquica, DBSCAN, GMM
-    - [x] Bônus sklearn (notebook 07)
+- [x] Base bruta 1.470 × 35
+- [x] EDA (univariada, bivariada Spearman/Cramér, Tukey, PCA exploratório)
+- [x] Coleção de insights em `reports/tables/eda_insights.csv`
 
-???+ success "Fase 5: Avaliação"
-    - [x] ARI / bootstrap / personas / SMART / vazamento
-    - [x] Regras de associação
+## Fase 3: Preparação
 
-???+ success "Fase 6: Implantação"
-    - [x] Pacote de scoring e carteira classificada
-    - [x] Streamlit (personas + classificar + monitoramento)
-    - [x] Relatório final Cap. I–IX
+- [x] Limpeza, tipologia, rótulos reservados
+- [x] Experimento de escala
+- [x] Gower (arquivo local) e StandardScaler
+
+## Fase 4: Modelagem
+
+- [x] Varredura de k, K-Medoids, hierárquica, DBSCAN, GMM
+- [x] Bônus sklearn (notebook 07)
+
+## Fase 5: Avaliação
+
+- [x] ARI, bootstrap, personas, perguntas SMART, auditoria de vazamento
+- [x] Regras de associação
+
+## Fase 6: Implantação
+
+- [x] Pacote de scoring e carteira classificada
+- [x] Streamlit (personas, classificar, monitoramento)
+- [x] Relatório final (capítulos I–IX)
 
 ## O que ficou em aberto
 
-1. Base sintética: padrões podem não se repetir em um RH real.
-2. Reciclagem do modelo a cada 12 meses.
+1. A base é sintética: os padrões podem não se repetir em um RH real.
+2. Reciclagem do modelo a cada 12 meses, ou antes se a carteira mudar de forma relevante.

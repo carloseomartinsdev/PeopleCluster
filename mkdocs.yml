@@ -7,6 +7,7 @@ repo_name: PeopleCluster
 nav:
   - Descrição do projeto: index.md
   - Equipe e critérios: equipe.md
+  - Canvas do problema: canvas_problema.md
   - Metodologia: metodologia.md
   - Entendimento de negócio: entendimento-negocio.md
   - Critérios de sucesso: criterios-sucesso.md
@@ -19,7 +20,6 @@ nav:
   - Implantação: implementacao.md
   - Relatório final: relatorio-final.md
   - Percurso PBL:
-      - Canvas do Problema: pbl/canvas-do-problema.md
       - Quadro PBL: pbl/quadro-pbl.md
   - Status: status.md
 

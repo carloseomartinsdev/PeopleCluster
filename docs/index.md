@@ -2,12 +2,12 @@
 
 ## Introdução
 
-PeopleCluster é um projeto de People Analytics voltado à segmentação de colaboradores e à definição de trilhas de desenvolvimento. A organização opera hoje com uma política única de carreira e retenção; o ciclo CRISP-DM identificou **dois perfis** (k = 2, K-Medoids / Gower) com contraste de attrition de cerca de **11% vs 21%**.
+PeopleCluster é um projeto de People Analytics para segmentar colaboradores e propor trilhas de desenvolvimento. A organização do cenário usa a mesma política de carreira e retenção para todos. A modelagem (K-Medoids com distância de Gower, k = 2) separou **dois perfis**, com taxa de saída de cerca de **11%** em um grupo e **21%** no outro.
 
-!!! success "Resultado publicado"
+!!! success "Resultado da modelagem"
     Cluster 0 — estáveis e engajados (renda e tempo de casa maiores). Cluster 1 — risco / início de carreira. App de consulta e classificação: `uv run invoke app`. Relatório: [relatório final](relatorio-final.md).
 
-A abordagem é **CRISP-DM**, com clusterização em dados mistos (Gower) e regras de associação (Apriori / FP-Growth) como evidência de coocorrência. GMM entra como comparativo no espaço euclidiano, **não** como modelo oficial.
+A abordagem é **CRISP-DM**, com clusterização em dados mistos (Gower) e regras de associação (Apriori / FP-Growth) como evidência de coocorrência. GMM entra como comparativo no espaço euclidiano, **não** como modelo oficial. O canvas completo e o relatório de EDA estão em [Canvas do problema](canvas_problema.md) e [Análise exploratória](analise-exploratoria.md).
 
 ## Dados do projeto
 
@@ -19,7 +19,7 @@ A abordagem é **CRISP-DM**, com clusterização em dados mistos (Gower) e regra
 | Base | IBM HR Analytics Employee Attrition & Performance |
 | Volume | 1.470 registros × 35 variáveis |
 | Licença | ODbL / DbCL 1.0 |
-| Restrição operacional | Máximo de 5 grupos acionáveis |
+| Restrição da diretoria | No máximo 5 grupos |
 | Stack | Python 3.12, `uv`, pandas, scikit-learn, mlxtend, Streamlit, MkDocs |
 
 ### Tipo do projeto

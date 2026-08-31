@@ -1,6 +1,8 @@
 # Relatório de Análise Exploratória de Dados (EDA)
 ## People Analytics — Base IBM HR Analytics Employee Attrition & Performance
 
+A versão publicada no site (com Spearman, Cramér, Tukey e PCA no fim) está em [analise-exploratoria.md](analise-exploratoria.md). Este arquivo é o texto original da Ana.
+
 | Item | Descrição |
 |---|---|
 | **Disciplina** | Aprendizagem de Máquina Não Supervisionado — MBA (UNIFOR) |

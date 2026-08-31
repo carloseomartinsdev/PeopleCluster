@@ -1,10 +1,10 @@
 # Quadro PBL — os cinco encontros
 
-Não há fotografias do quadro físico. Esta página **reconstitui** o percurso PBL a partir do Canvas, dos notebooks e das evidências em `reports/`. É a evidência do raciocínio, não do resultado.
+Não há fotografia do quadro da sala. Esta página reconstitui os cinco encontros com o Canvas, os notebooks e as evidências em `reports/`. Hipótese derrubada permanece registrada: não se apaga.
 
-**Regra do quadro:** uma hipótese só sai da coluna 2 quando houver evidência que a confirme (vira Fato) ou que a refute (fica no relatório). Hipótese derrubada **não é apagada**.
+**Regra do quadro:** uma hipótese só sai da coluna 2 quando houver evidência que a confirme (vira fato) ou que a refute (fica no relatório).
 
-Canvas textual: [Canvas do Problema](canvas-do-problema.md).
+Canvas textual: [Canvas do Problema](../canvas_problema.md).
 
 ---
 
@@ -17,7 +17,7 @@ Canvas textual: [Canvas do Problema](canvas-do-problema.md).
 | A diretoria limita a no máximo 5 grupos acionáveis | OverTime define um grupo de “alta carga” | Por que Gower, e não só K-Means euclidiano? | Carregar a base e listar constantes |
 | Três colunas são constantes (`EmployeeCount`, `StandardHours`, `Over18`) | | | |
 
-**Socialização.** A discussão travou em: *se Attrition explica a saída, por que não usá-lo no cluster?* A resposta da equipe — eixo do projeto — é que usá-lo devolveria um modelo de rotatividade, que o RH já mede. A pergunta feita era outra: *quais perfis existem **antes** da saída*.
+**Socialização.** A discussão travou em: *se Attrition explica a saída, por que não usá-lo no cluster?* A resposta adotada — eixo do projeto — é que usá-lo devolveria um modelo de rotatividade, que o RH já mede. A pergunta feita era outra: *quais perfis existem **antes** da saída*.
 
 ---
 
@@ -95,4 +95,4 @@ Canvas textual: [Canvas do Problema](canvas-do-problema.md).
 | H9 | Existe grupo com maior attrition | **confirmada** | cluster 1 |
 | H10 | Há estáveis vs risco/início de carreira | **confirmada** | k = 2; `models/catalogo_personas.json` |
 
-Oito hipóteses derrubadas ou descartadas, duas confirmadas, uma parcialmente sustentada (GMM como comparativo). É o retrato do percurso, não só do modelo publicado.
+Oito hipóteses derrubadas ou descartadas, duas confirmadas, uma parcialmente sustentada (GMM como comparativo). Esse consolidado descreve o percurso, não só o modelo publicado.

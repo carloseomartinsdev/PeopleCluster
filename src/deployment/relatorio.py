@@ -42,9 +42,7 @@ def montar_relatorio() -> str:
 
     return f"""# PeopleCluster — relatório final
 
-**Tema 08 · RH e People Analytics** · CRISP-DM fases 1 a 6 · modelo K-Medoids/Gower, k = {k}
-
-> Gerado a partir das tabelas e JSON em `reports/` e `models/`. Números não foram redigitados à mão.
+**Tema 08 · RH e People Analytics** · K-Medoids/Gower, k = {k}
 
 ## I · Sumário executivo
 
@@ -121,6 +119,9 @@ def gravar() -> Path:
     texto = montar_relatorio()
     config.garantir_diretorios()
     destino = config.REPORTS / "relatorio-final.md"
-    destino.write_text(texto, encoding="utf-8")
-    (config.DOCS / "relatorio-final.md").write_text(texto, encoding="utf-8")
+    aviso = (
+        "> Cópia montada a partir das tabelas em `reports/` e `models/`. "
+        "O texto da banca é `docs/relatorio-final.md`.\n\n"
+    )
+    destino.write_text(aviso + texto, encoding="utf-8")
     return destino

@@ -1,6 +1,6 @@
 # Metodologia
 
-O projeto adota o **CRISP-DM**:
+O projeto segue o **CRISP-DM**: entendimento do negócio, dos dados, preparação, modelagem, avaliação e implantação. A avaliação pode devolver à preparação ou à modelagem — foi o caso da escolha de k.
 
 ```mermaid
 flowchart LR
@@ -25,9 +25,17 @@ flowchart LR
 
 ## Restrições de modelagem
 
-- No máximo **5** segmentos acionáveis
+- No máximo **5** grupos, por decisão da diretoria do cenário
 - `Attrition` e `PerformanceRating` reservadas para avaliação externa
-- Preferência por interpretabilidade de negócio em relação a índices internos isolados
+- Quando o índice interno e a leitura de RH não coincidem, prevalece a leitura de RH (nesta base a silhueta nunca foi alta)
+
+## Ferramentas
+
+- Python 3.12 (`uv` / `pyproject.toml`)
+- Jupyter notebooks em `notebooks/`
+- Documentação MkDocs Material em `docs/`
+- Streamlit em `src/deployment/app.py`
+
 
 ## Ferramentas
 

@@ -1,12 +1,14 @@
 # Canvas do Problema e Perguntas Orientadas a Dados
 ## People Analytics — Segmentação de Colaboradores para Trilhas de Desenvolvimento
 
+Texto de **Ana Caroline Amorim**. O quadro dos encontros PBL está em [Percurso PBL](pbl/quadro-pbl.md).
+
 | Item | Descrição |
 |---|---|
 | **Disciplina** | Aprendizagem de Máquina Não Supervisionado — MBA (UNIFOR) |
 | **Tema** | Tema 08 — RH e People Analytics |
 | **Base de dados** | IBM HR Analytics Employee Attrition & Performance (`WA_Fn-UseC_-HR-Employee-Attrition.csv`) — 1.470 colaboradores, 35 variáveis |
-| **Fase do projeto** | Fase 0/1 — Canvas + Exploração de Dados (Cap. III do relatório) |
+| **Fase do projeto** | Abertura: canvas e exploração. A clusterização (k = 2) veio depois; o desfecho está no fim desta página. |
 
 ---
 
@@ -134,4 +136,15 @@ Perguntas que a análise exploratória e a clusterização devem responder, orga
 
 ---
 
-*Documento gerado a partir dos notebooks `01_exploracao_inicial.ipynb` e `02_eda.ipynb`, como base para a disciplina de Aprendizagem de Máquina Não Supervisionado (MBA UNIFOR).*
+## 11. O que a clusterização mostrou
+
+O canvas acima foi escrito na abertura. Com K-Medoids e distância de Gower, o k que melhor se sustenta (e ainda cabe no teto de 5) é **2**:
+
+| Cluster | n | Attrition | Renda mediana | Tempo de casa (mediana) | Leitura |
+|---|---:|---:|---:|---:|---|
+| 0 | 733 | ~11% | US$ 6.347 | 8 anos | Mais estáveis, renda e tempo de casa maiores |
+| 1 | 737 | ~21% | US$ 3.376 | 4 anos | Mais risco / início de carreira |
+
+H1 (grupo próprio de “alta carga”) e o perfil de baixo engajamento **não** saíram sozinhos. Hora extra continua associada à saída na EDA (30,5% vs 10,4%), mas não foi o eixo que partiu a base. H2 e H4 aparecem misturadas nos dois clusters. H5 (k ≤ 5) foi atendida.
+
+Números e personas: [modelagem](modelagem.md) e [avaliação](avaliacao.md).

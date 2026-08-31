@@ -1,8 +1,8 @@
-# PeopleCluster — relatório final
+# PeopleCluster — relatório final (dump das tabelas)
 
-**Tema 08 · RH e People Analytics** · CRISP-DM fases 1 a 6 · modelo K-Medoids/Gower, k = 2
+> Cópia montada a partir de `reports/` e `models/`. O texto da banca é `docs/relatorio-final.md`.
 
-> Gerado a partir das tabelas e JSON em `reports/` e `models/`. Números não foram redigitados à mão.
+**Tema 08 · RH e People Analytics** · K-Medoids/Gower, k = 2
 
 ## I · Sumário executivo
 

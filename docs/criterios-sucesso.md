@@ -17,4 +17,4 @@
 - Número de grupos ≤ 5
 - Uso de PCA condicionado a ganho de interpretação
 
-Dado o caráter sintético da base, o critério decisivo é a **utilidade gerencial** dos segmentos, não apenas a maximização de índices internos.
+Dado o caráter sintético da base, o que pesa na decisão de implantar é se os grupos dão para usar no RH — não só o valor da silhueta ou de outros índices internos.

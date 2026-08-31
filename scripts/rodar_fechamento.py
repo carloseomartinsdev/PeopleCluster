@@ -219,12 +219,17 @@ smart = pd.DataFrame(
 )
 smart.to_csv(config.TABLES / "avaliacao_perguntas_smart.csv", index=False)
 
-proibidas = {"Attrition", "PerformanceRating", "EmployeeNumber"}
+proibidas = ["Attrition", "PerformanceRating", "EmployeeNumber"]
+papeis = {
+    "Attrition": "rótulo reservado",
+    "PerformanceRating": "rótulo reservado",
+    "EmployeeNumber": "identificador",
+}
 vazamento = pd.DataFrame(
     {
-        "coluna": sorted(proibidas),
-        "esta_nas_features": [c in features.columns for c in sorted(proibidas)],
-        "papel": ["rótulo reservado", "rótulo reservado", "identificador"],
+        "coluna": proibidas,
+        "esta_nas_features": [c in features.columns for c in proibidas],
+        "papel": [papeis[c] for c in proibidas],
     }
 )
 vazamento.to_csv(config.TABLES / "avaliacao_auditoria_vazamento.csv", index=False)

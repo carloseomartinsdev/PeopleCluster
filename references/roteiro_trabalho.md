@@ -17,7 +17,7 @@
 |---|---|---|---|
 | 0.1 | Escolher o tema | Pronto | Tema 08 |
 | 0.2 | Obter a base | Pronto | `data/raw/` |
-| 0.3 | Canvas | Pronto | `references/canvas_problema.md`, `docs/pbl/` |
+| 0.3 | Canvas | Pronto | `docs/canvas_problema.md` |
 | 0.4 | Dicionário | Pronto | `references/dicionario_dados.md` |
 | 0.5 | Ambiente (`uv sync`) | Pronto | `.venv` |
 | 0.6 | Quadro PBL (reconstituído, sem fotos) | Pronto | `docs/pbl/quadro-pbl.md` |

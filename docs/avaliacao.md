@@ -3,9 +3,9 @@
 Código: `notebooks/05_avaliacao.ipynb`
 Módulos: `src/model/avaliacao.py`, `src/model/associacao.py`
 
-## Escopo
+## O que esta fase faz
 
-Avaliar a segmentação com os rótulos reservados abertos (`Attrition`, `PerformanceRating`), medir estabilidade, minerar coocorrências e propor ações por perfil.
+Abre os rótulos que estavam reservados (`Attrition`, `PerformanceRating`), mede estabilidade, descreve coocorrências e propõe ação por perfil.
 
 ## Critérios
 
@@ -21,7 +21,7 @@ Avaliar a segmentação com os rótulos reservados abertos (`Attrition`, `Perfor
 
 ## Concordância entre métodos
 
-O ARI entre K-Medoids (Gower), hierárquica (Gower) e K-Means fica próximo de zero: as partições **não coincidem**. A leitura de negócio adota o K-Medoids/Gower como modelo principal.
+O ARI entre K-Medoids (Gower), hierárquica (Gower) e K-Means fica próximo de zero: as partições **não coincidem**. A leitura de negócio usa o K-Medoids/Gower como modelo principal.
 
 ## Associação
 
@@ -64,4 +64,4 @@ Vazamento: `Attrition`, `PerformanceRating` e `EmployeeNumber` **não** estão n
 
 ## Limitações
 
-Estrutura de grupos fraca (silhueta baixa, ARI entre métodos baixo, bootstrap do K-Medoids modesto). O valor está no contraste de attrition e no pacote de ações.
+A estrutura de grupos é fraca (silhueta baixa, ARI entre métodos baixo, bootstrap do K-Medoids modesto). O que justifica a implantação é o contraste de attrition (~11% vs ~21%) e o conjunto de ações por grupo.
