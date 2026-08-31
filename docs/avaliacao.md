@@ -1,11 +1,11 @@
 # Avaliação
 
 Código: `notebooks/05_avaliacao.ipynb`
-Módulo: `src/model/avaliacao.py`
+Módulos: `src/model/avaliacao.py`, `src/model/associacao.py`
 
 ## Escopo
 
-Avaliar a segmentação com os rótulos reservados abertos (`Attrition`, `PerformanceRating`), medir estabilidade e propor ações por perfil.
+Avaliar a segmentação com os rótulos reservados abertos (`Attrition`, `PerformanceRating`), medir estabilidade, minerar coocorrências e propor ações por perfil.
 
 ## Critérios
 
@@ -21,7 +21,11 @@ Avaliar a segmentação com os rótulos reservados abertos (`Attrition`, `Perfor
 
 ## Concordância entre métodos
 
-O ARI entre K-Medoids (Gower), hierárquica (Gower) e K-Means fica próximo de zero: as partições **não coincidem**. A leitura de negócio adota o K-Medoids/Gower como modelo principal (adequado a dados mistos), com as demais vias como comparativo.
+O ARI entre K-Medoids (Gower), hierárquica (Gower) e K-Means fica próximo de zero: as partições **não coincidem**. A leitura de negócio adota o K-Medoids/Gower como modelo principal.
+
+## Associação
+
+Apriori e FP-Growth devolvem os **mesmos** conjuntos frequentes (suporte 0,12, tamanho ≤ 3). Regras com consequente em `cluster:` ou `OverTime:` em `reports/tables/avaliacao_regras_associacao.csv`. Leitura típica: cargo/departamento coocorrem com o cluster (ex.: Sales Executive com cluster 0).
 
 ## Perfis (K-Medoids / Gower)
 
@@ -47,6 +51,9 @@ O ARI entre K-Medoids (Gower), hierárquica (Gower) e K-Means fica próximo de z
 | Alta performance e alta carga | não emergiu como segmento próprio em k=2 |
 | Baixo engajamento | não emergiu como segmento próprio em k=2 |
 
+Perguntas SMART: `reports/tables/avaliacao_perguntas_smart.csv`.
+Vazamento: `Attrition`, `PerformanceRating` e `EmployeeNumber` **não** estão nas features (`avaliacao_auditoria_vazamento.csv`).
+
 ## Artefatos
 
 - `reports/tables/avaliacao_*.csv`
@@ -57,4 +64,4 @@ O ARI entre K-Medoids (Gower), hierárquica (Gower) e K-Means fica próximo de z
 
 ## Limitações
 
-Estrutura de grupos fraca (silhueta baixa, ARI entre métodos baixo, bootstrap do K-Medoids modesto). O valor do resultado está no contraste de attrition e no pacote de ações, não na separação geométrica forte.
+Estrutura de grupos fraca (silhueta baixa, ARI entre métodos baixo, bootstrap do K-Medoids modesto). O valor está no contraste de attrition e no pacote de ações.

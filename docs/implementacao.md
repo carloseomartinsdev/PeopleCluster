@@ -3,6 +3,7 @@
 Publicação operacional da segmentação PeopleCluster (K-Medoids + Gower, **k = 2**), com classificação de novos colaboradores pelo medoide Gower mais próximo.
 
 Notebook: [`notebooks/06-implantacao.ipynb`](../notebooks/06-implantacao.ipynb).
+Relatório final: [`relatorio-final.md`](relatorio-final.md) (cópia de `reports/relatorio-final.md`).
 
 ## Artefatos
 
@@ -12,18 +13,20 @@ Notebook: [`notebooks/06-implantacao.ipynb`](../notebooks/06-implantacao.ipynb).
 | Carteira classificada | `data/processed/carteira_classificada.csv` |
 | Metadados | `models/metadados_implantacao.json` |
 | Entregas / monitoramento / pitch | `reports/tables/implantacao_*.csv` |
-| Figura de segmentos | `reports/figures/13_implantacao_segmentos.png` |
-| App Streamlit (personas) | `src/deployment/app.py` |
+| Relatório final | `reports/relatorio-final.md` |
+| App Streamlit | `src/deployment/app.py` — `uv run invoke app` |
 | Módulo de classificação | `src/deployment/scoring.py` |
 
 ## Contrato de classificação
 
-1. Entrada: atributos do colaborador nas colunas do pacote (`Age`, `MonthlyIncome`, `OverTime`, …).
-2. Distância Gower ao medoide de cada cluster (EmployeeNumber **476** e **933** na base de referência).
+1. Entrada: atributos do colaborador nas colunas do pacote.
+2. Distância Gower ao medoide de cada cluster.
 3. Atribuição ao cluster de menor distância; margem entre 1º e 2º medoide → confiança (`alta` / `media` / `baixa`).
-4. Saída: cluster, persona, ações e KPI do `catalogo_personas.json`.
+4. Saída: cluster, persona, ações e KPI.
 
 Reprodução na base de treino: acordância **100%** com os rótulos publicados.
+
+O app tem três abas: personas, **classificar colaborador** (formulário + `scoring.classificar_colaborador`) e monitoramento.
 
 ## Segmentos publicados
 
@@ -34,20 +37,8 @@ Reprodução na base de treino: acordância **100%** com os rótulos publicados.
 
 ## Monitoramento
 
-| KPI | Segmento | Frequência |
-|---|---|---|
-| Taxa de attrition | 0 e 1 | mensal |
-| JobSatisfaction / WorkLifeBalance | 0 e 1 | trimestral |
-| % OverTime | 1 (prioridade) | mensal |
-| Adesão a mentoria/capacitação | 1 | trimestral |
-| Permanência / reconhecimento | 0 | semestral |
-
-## Uso operacional
-
-1. Classificar novos colaboradores com `scoring.classificar_colaborador` (ou o app Streamlit).
-2. Acionar o pacote de ações do catálogo de personas.
-3. Revisar a segmentação periodicamente (reamostragem / nova base HR).
+Ver `reports/tables/implantacao_monitoramento.csv` (attrition, satisfação, OverTime, confiança baixa, reciclagem anual).
 
 ## Bônus (sklearn)
 
-Notebook [`07_modelagem_bonus.ipynb`](../notebooks/07_modelagem_bonus.ipynb): grade KMeans / MiniBatchKMeans / BisectingKMeans na matriz escalada — contraste com o modelo principal Gower, sem substituí-lo em produção.
+Notebook [`07_modelagem_bonus.ipynb`](../notebooks/07_modelagem_bonus.ipynb): grade KMeans / MiniBatchKMeans / BisectingKMeans — contraste, sem substituir Gower em produção.

@@ -1,0 +1,9 @@
+id,insight,evidencia
+1,Taxa de attrition desigual,16.1% geral; OverTime Yes 30.5%
+2,Horas extras elevam risco de saída,OverTime=Yes com attrition bem acima de OverTime=No
+3,Quem sai tem renda e idade médias menores,MonthlyIncome e Age menores no grupo Attrition=Yes
+4,Likert baixa associa-se a mais saída,JobSatisfaction e EnvironmentSatisfaction 1–2 com taxa maior
+5,Multicolinearidade de carreira,"JobLevel, MonthlyIncome e TotalWorkingYears com |rho| alto"
+6,Constantes e ID não informam cluster,"EmployeeCount, StandardHours, Over18; EmployeeNumber é chave"
+7,"Discrepantes de renda são cauda, não erro",Tukey em MonthlyIncome; decisão: manter
+8,PCA exploratório não é unidimensional,CP1–CP2 concentram porte/carreira; vários CPs para 80%

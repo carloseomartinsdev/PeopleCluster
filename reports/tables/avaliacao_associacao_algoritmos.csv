@@ -1,0 +1,3 @@
+algoritmo,conjuntos_frequentes,tempo_s,identico_ao_apriori
+Apriori,1159,0.014,True
+FP-Growth,1159,0.161,True

@@ -8,7 +8,6 @@ import numpy as np
 import pandas as pd
 
 from src import config
-from src.model import distancias as dist
 
 
 def carregar_tipologia() -> dict:
@@ -45,6 +44,9 @@ def publicar_pacote(
     numericas, nominais = colunas_gower(tipologia)
     medoides_idx = encontrar_medoides(distancias, rotulos)
     catalogo = json.loads((config.MODELS / "catalogo_personas.json").read_text(encoding="utf-8"))
+    amplitudes = {
+        col: [float(features[col].min()), float(features[col].max())] for col in numericas
+    }
 
     pacote = {
         "versao": "peoplecluster.segmentacao/1",
@@ -53,6 +55,7 @@ def publicar_pacote(
         "colunas": features.columns.tolist(),
         "numericas": numericas,
         "nominais": nominais,
+        "numericas_range": amplitudes,
         "medoides_idx": medoides_idx.tolist(),
         "medoides_employee_number": avaliacao.loc[medoides_idx, "EmployeeNumber"]
         .astype(int)
@@ -77,11 +80,37 @@ def _gower_para_medoides(
     medoides: pd.DataFrame,
     numericas: list[str],
     nominais: list[str],
+    amplitudes: dict[str, list[float]] | None = None,
 ) -> np.ndarray:
-    """Dissimilaridade Gower do registro a cada medoide (vetor 1×k)."""
-    base = pd.concat([registro, medoides], ignore_index=True)
-    matriz = dist.gower(base, numericas=numericas, nominais=nominais)
-    return matriz[0, 1:]
+    """Dissimilaridade Gower do registro a cada medoide (vetor 1×k).
+
+    Usa as amplitudes do treino quando informadas — senão o min/max das 1+k
+    linhas distorce a escala e a partição de treino não se reproduz.
+    """
+    k = len(medoides)
+    acumulado = np.zeros(k, dtype=np.float64)
+    peso_total = 0.0
+    ref = registro.iloc[0]
+
+    for coluna in numericas:
+        if amplitudes and coluna in amplitudes:
+            baixo, alto = amplitudes[coluna]
+            amplitude = float(alto) - float(baixo)
+        else:
+            valores = pd.concat([registro[coluna], medoides[coluna]], ignore_index=True)
+            amplitude = float(valores.max() - valores.min())
+        if amplitude == 0:
+            continue
+        acumulado += np.abs(float(ref[coluna]) - medoides[coluna].to_numpy(dtype=float)) / amplitude
+        peso_total += 1.0
+
+    for coluna in nominais:
+        acumulado += (ref[coluna] != medoides[coluna].to_numpy()).astype(np.float64)
+        peso_total += 1.0
+
+    if peso_total == 0:
+        raise ValueError("Nenhuma variável com variância foi informada.")
+    return acumulado / peso_total
 
 
 def classificar_colaborador(
@@ -102,7 +131,13 @@ def classificar_colaborador(
 
     registro = pd.DataFrame([{c: atributos[c] for c in colunas}])
     medoides = pd.DataFrame(pacote["medoides_registros"])[colunas]
-    distancias = _gower_para_medoides(registro, medoides, pacote["numericas"], pacote["nominais"])
+    distancias = _gower_para_medoides(
+        registro,
+        medoides,
+        pacote["numericas"],
+        pacote["nominais"],
+        amplitudes=pacote.get("numericas_range"),
+    )
     cluster = int(np.argmin(distancias))
     ordenadas = np.sort(distancias)
     margem = float(ordenadas[1] - ordenadas[0]) if len(ordenadas) > 1 else 0.0

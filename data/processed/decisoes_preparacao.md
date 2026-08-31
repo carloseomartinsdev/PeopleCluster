@@ -16,11 +16,10 @@
 - Ordinais (3): ['Education', 'JobLevel', 'StockOptionLevel']
 - Numéricas (14): ['Age', 'DailyRate', 'DistanceFromHome', 'HourlyRate', 'MonthlyIncome', 'MonthlyRate', 'NumCompaniesWorked', 'PercentSalaryHike', 'TotalWorkingYears', 'TrainingTimesLastYear', 'YearsAtCompany', 'YearsInCurrentRole', 'YearsSinceLastPromotion', 'YearsWithCurrManager']
 
-## Estratégia prevista (Fase 3)
-1. **Principal:** distância de Gower + K-Medoids / Hierárquica / DBSCAN (k ≤ 5)
-2. **Comparativo:** K-Means/GMM sobre matriz one-hot + scaler (`hr_kmeans_raw_onehot.csv`)
-3. **PCA:** explorar redundância (JobLevel / MonthlyIncome / TotalWorkingYears)
-4. **Associação:** Apriori/FP-Growth em variáveis discretizadas / flags
+## Fechamento da preparação
+1. Matriz Gower (`data/processed/matriz_gower.npy`, local) — numéricas + Likert + ordinais + nominais
+2. One-hot + StandardScaler — via K-Means/DBSCAN/PCA/GMM
+3. Experimento de escala: StandardScaler mantido
 
 ## Dimensões
 - Original: (1470, 35)

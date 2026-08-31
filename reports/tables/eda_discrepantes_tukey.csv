@@ -1,0 +1,5 @@
+coluna,q1,q3,iqr,limite_inf,limite_sup,n_discrepantes,pct,decisao
+MonthlyIncome,2911.0,8379.0,5468.0,-5291.0,16581.0,114,7.76,"manter — cauda de RH legítima, não erro de cadastro"
+Age,30.0,43.0,13.0,10.5,62.5,0,0.0,"manter — cauda de RH legítima, não erro de cadastro"
+YearsAtCompany,3.0,9.0,6.0,-6.0,18.0,104,7.07,"manter — cauda de RH legítima, não erro de cadastro"
+TotalWorkingYears,6.0,15.0,9.0,-7.5,28.5,63,4.29,"manter — cauda de RH legítima, não erro de cadastro"

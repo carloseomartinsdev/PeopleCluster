@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from src import config
+from src.model import associacao as assoc
 from src.model import avaliacao as av
 
 config.garantir_diretorios()
@@ -134,3 +135,18 @@ fig.savefig(config.DOCS_FIGURES / "12_attrition_por_cluster.png", dpi=120, bbox_
 plt.close()
 
 print("OK avaliação")
+
+if "cluster_gmm" in rotulos_df.columns:
+    particoes["gmm"] = rotulos_df["cluster_gmm"].to_numpy()
+    ari = av.matriz_ari(particoes)
+    ari.to_csv(config.TABLES / "avaliacao_ari_metodos.csv")
+
+transacoes = assoc.montar_transacoes(features, segmentos=particoes["kmedoids_gower"])
+comparativo, frequentes = assoc.comparar_algoritmos(transacoes, suporte_minimo=0.12, max_tamanho=3)
+comparativo.to_csv(config.TABLES / "avaliacao_associacao_algoritmos.csv")
+regras = assoc.gerar_regras(frequentes, confianca_minima=0.55, lift_minimo=1.10)
+negocio = assoc.regras_de_negocio(regras)
+(negocio if not negocio.empty else regras).head(25).to_csv(
+    config.TABLES / "avaliacao_regras_associacao.csv", index=False
+)
+print("Associação:\n", comparativo)

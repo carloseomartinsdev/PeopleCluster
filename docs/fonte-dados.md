@@ -25,7 +25,9 @@ Cada registro representa um colaborador, com atributos demográficos, de cargo, 
 
 | Material | Local |
 |---|---|
-| Enunciado do tema | `references/01-temas.pdf` |
 | Dicionário de dados | `references/dicionario_dados.md` |
-| Canvas do problema | `references/canvas_problema.md` |
-| Checklist CRISP-DM | `references/03-Checklist-CRISP-DM.pdf` |
+| Canvas do problema | `references/canvas_problema.md` e `docs/pbl/canvas-do-problema.md` |
+| Checklist CRISP-DM (status) | `references/checklist_crisp_dm_status.md` |
+| Roteiro do trabalho | `references/roteiro_trabalho.md` |
+
+Os PDFs de enunciado/checklist da disciplina, se usados em aula, ficam fora deste repositório.

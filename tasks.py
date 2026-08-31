@@ -33,15 +33,15 @@ def build(c):
 @task
 def lint(c):
     """Verifica o código com o ruff (lint e formatação)."""
-    c.run("ruff check src tasks.py")
-    c.run("ruff format --check src tasks.py")
+    c.run("ruff check src tasks.py tests scripts")
+    c.run("ruff format --check src tasks.py tests scripts")
 
 
 @task
 def fmt(c):
     """Formata o código e aplica correções automáticas do ruff."""
-    c.run("ruff format src tasks.py")
-    c.run("ruff check --fix src tasks.py")
+    c.run("ruff format src tasks.py tests scripts")
+    c.run("ruff check --fix src tasks.py tests scripts")
 
 
 @task

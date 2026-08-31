@@ -1,0 +1,8 @@
+{
+  "k": 2,
+  "covariancia": "full",
+  "bic": -48388.2,
+  "silhueta": 0.0789,
+  "pct_fronteira": 0.0,
+  "papel": "comparativo no espaço one-hot + StandardScaler; não substitui Gower"
+}

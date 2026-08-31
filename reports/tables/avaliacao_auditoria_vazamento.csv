@@ -1,0 +1,4 @@
+coluna,esta_nas_features,papel
+Attrition,False,rótulo reservado
+EmployeeNumber,False,rótulo reservado
+PerformanceRating,False,identificador

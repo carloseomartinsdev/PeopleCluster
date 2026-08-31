@@ -17,7 +17,7 @@ Segmentar a base de colaboradores em até **cinco** perfis homogêneos e definir
 
 ## Meta de mineração de dados
 
-Produzir agrupamentos a partir de atributos demográficos, de carreira, remuneração e clima organizacional (escalas Likert), utilizando distância adequada a dados mistos e, complementarmente, regras de associação para padrões de coocorrência.
+Produzir agrupamentos a partir de atributos demográficos, de carreira, remuneração e clima organizacional (escalas Likert), utilizando distância adequada a dados mistos. Regras de associação (Apriori / FP-Growth) entram na avaliação como evidência de coocorrência, não como substituto da clusterização.
 
 ## Perguntas orientadas a dados
 

@@ -1,0 +1,4 @@
+var1,var2,cramer_v
+Department,JobRole,0.9394
+Department,EducationField,0.5905
+EducationField,JobRole,0.343

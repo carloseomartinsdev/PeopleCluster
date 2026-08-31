@@ -1,31 +1,32 @@
 # Metodologia
 
-O projeto adota o **CRISP-DM** (Cross-Industry Standard Process for Data Mining):
+O projeto adota o **CRISP-DM**:
 
 ```mermaid
 flowchart LR
-  A[Negócio] --> B[Dados]
-  B --> C[Preparação]
+  A[Negocio] --> B[Dados]
+  B --> C[Preparacao]
   C --> D[Modelagem]
-  D --> E[Avaliação]
-  E --> F[Implantação]
+  D --> E[Avaliacao]
+  E --> F[Implantacao]
   E -.-> B
 ```
 
-## Técnicas
+## Técnicas e papel
 
-| Família | Métodos |
-|---|---|
-| Distância | Gower (dados mistos) |
-| Clusterização | K-Medoids / PAM, Hierárquica, DBSCAN |
-| Comparativo | K-Means, GMM |
-| Redução dimensional | PCA |
-| Associação | Apriori, FP-Growth |
+| Família | Métodos | Papel neste projeto |
+|---|---|---|
+| Distância | Gower | Espaço do **modelo oficial** (dados mistos) |
+| Clusterização | K-Medoids / PAM | Partição publicada (k=2) |
+| Clusterização | Hierárquica, DBSCAN, K-Means | Comparativo |
+| Mistura | GMM (sklearn) | Comparativo no espaço one-hot + StandardScaler; BIC/AIC; não substitui Gower |
+| Redução dimensional | PCA | Diagnóstico e visualização |
+| Associação | Apriori e FP-Growth (`mlxtend`) | Coocorrência colaborador × itens; conjuntos equivalentes nos mesmos limiares |
 
 ## Restrições de modelagem
 
 - No máximo **5** segmentos acionáveis
-- Variáveis `Attrition` e `PerformanceRating` reservadas para avaliação externa (não entram na formação dos clusters)
+- `Attrition` e `PerformanceRating` reservadas para avaliação externa
 - Preferência por interpretabilidade de negócio em relação a índices internos isolados
 
 ## Ferramentas
@@ -33,3 +34,4 @@ flowchart LR
 - Python 3.12 (`uv` / `pyproject.toml`)
 - Jupyter notebooks em `notebooks/`
 - Documentação MkDocs Material em `docs/`
+- Streamlit em `src/deployment/app.py`

@@ -23,6 +23,7 @@ from src import config
 from src.model import densidade as dens
 from src.model import distancias as dist
 from src.model import hierarquica as hier
+from src.model import mistura as mix
 from src.model import particional as part
 
 config.garantir_diretorios()
@@ -86,6 +87,14 @@ rotulos_db = dens.aplicar_dbscan(matriz_padronizada, eps=eps, min_amostras=min_a
 pca = PCA(n_components=2, random_state=config.SEMENTE)
 proj = pca.fit_transform(matriz_padronizada)
 
+print("Varredura GMM...")
+var_gmm = mix.varrer_gmm(matriz_padronizada, 2, 5)
+var_gmm.to_csv(config.TABLES / "varredura_gmm.csv", index=False)
+escolha_gmm = mix.escolher_configuracao(var_gmm, k_alvo=k)
+_, rotulos_gmm, _ = mix.ajustar_gmm(
+    matriz_padronizada, k=k, covariancia=str(escolha_gmm["covariancia"])
+)
+
 # Perfis
 perfil = df.copy()
 perfil["cluster"] = rotulos
@@ -147,6 +156,7 @@ pd.DataFrame(
         "cluster_kmeans": KMeans(n_clusters=k, n_init=20, random_state=config.SEMENTE).fit_predict(
             matriz_padronizada
         ),
+        "cluster_gmm": rotulos_gmm,
     }
 ).to_csv(config.DATA_PROCESSED / "rotulos_clusters.csv", index=False)
 

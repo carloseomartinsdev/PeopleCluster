@@ -23,7 +23,9 @@
 ## Fechamento da preparação
 
 1. Matriz Gower (`data/processed/matriz_gower.npy`) — numéricas + Likert + ordinais + nominais
-2. One-hot + StandardScaler (`data/processed/hr_kmeans_scaled.csv`) — via K-Means/DBSCAN/PCA
+2. One-hot + StandardScaler (`data/processed/hr_kmeans_scaled.csv`) — via K-Means/DBSCAN/PCA/GMM
+3. Experimento de escala: StandardScaler mantido (RobustScaler sobe silhueta; MinMax diverge)
+4. Matriz Gower `.npy` é local (gitignore); regenerar com `scripts/rodar_modelagem.py`
 
 ## Dimensões
 

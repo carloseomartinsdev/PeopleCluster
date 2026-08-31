@@ -1,0 +1,7 @@
+pergunta,resposta
+Quais perfis emergem?,Dois: estáveis (0) e risco/início de carreira (1)
+Existe segmento com maior attrition?,Sim — cluster 1 com ~21% contra ~11% no 0
+O que caracteriza alta performance?,PerformanceRating não separou grupo próprio em k=2
+"Satisfação, remuneração e permanência?","Cluster 0: renda e tempo de casa maiores, satisfação um pouco maior"
+Horas extras e risco de saída?,OverTime eleva attrition na EDA; cluster 1 tem overtime um pouco maior
+Onde investir em retenção?,"Prioridade no cluster 1 (mentoria, salário, clima)"

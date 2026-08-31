@@ -1,0 +1,4 @@
+escalador,silhueta,inercia
+StandardScaler,0.1111,68255.6
+RobustScaler,0.1588,21159.4
+MinMaxScaler,0.116,7306.7

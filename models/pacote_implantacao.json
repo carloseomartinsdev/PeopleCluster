@@ -162,5 +162,95 @@
       "0": 0.11050477489768076,
       "1": 0.21166892808683854
     }
+  },
+  "numericas_range": {
+    "Age": [
+      18.0,
+      60.0
+    ],
+    "DailyRate": [
+      102.0,
+      1499.0
+    ],
+    "DistanceFromHome": [
+      1.0,
+      29.0
+    ],
+    "HourlyRate": [
+      30.0,
+      100.0
+    ],
+    "MonthlyIncome": [
+      1009.0,
+      19999.0
+    ],
+    "MonthlyRate": [
+      2094.0,
+      26999.0
+    ],
+    "NumCompaniesWorked": [
+      0.0,
+      9.0
+    ],
+    "PercentSalaryHike": [
+      11.0,
+      25.0
+    ],
+    "TotalWorkingYears": [
+      0.0,
+      40.0
+    ],
+    "TrainingTimesLastYear": [
+      0.0,
+      6.0
+    ],
+    "YearsAtCompany": [
+      0.0,
+      40.0
+    ],
+    "YearsInCurrentRole": [
+      0.0,
+      18.0
+    ],
+    "YearsSinceLastPromotion": [
+      0.0,
+      15.0
+    ],
+    "YearsWithCurrManager": [
+      0.0,
+      17.0
+    ],
+    "EnvironmentSatisfaction": [
+      1.0,
+      4.0
+    ],
+    "JobSatisfaction": [
+      1.0,
+      4.0
+    ],
+    "RelationshipSatisfaction": [
+      1.0,
+      4.0
+    ],
+    "JobInvolvement": [
+      1.0,
+      4.0
+    ],
+    "WorkLifeBalance": [
+      1.0,
+      4.0
+    ],
+    "Education": [
+      1.0,
+      5.0
+    ],
+    "JobLevel": [
+      1.0,
+      5.0
+    ],
+    "StockOptionLevel": [
+      0.0,
+      3.0
+    ]
   }
 }
